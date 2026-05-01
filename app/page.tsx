@@ -58,9 +58,6 @@ export default function Home() {
           <Link href="/auth" className="btn-primary py-3 px-8 text-base shadow-soft hover:shadow-soft-lg transform hover:-translate-y-0.5">
             Get Started Free ✨
           </Link>
-          <a href="https://github.com" target="_blank" rel="noreferrer" className="btn-ghost py-3 px-8 text-base bg-white/60">
-            View Source Code
-          </a>
         </div>
       </main>
 
