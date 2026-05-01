@@ -132,10 +132,5 @@ service cloud.firestore {
 - Responsive layout with smooth animations
 - Glass-morphism cards with backdrop blur
 
-## 📌 LinkedIn Description
-
-> **StudyNest** — A full-stack personal productivity dashboard built with Next.js 14, TypeScript, Firebase Auth & Firestore. Features real-time cloud sync, Google OAuth, Pomodoro timer, daily journaling, project tracking, and a mini calendar. Deployed on Vercel.
-
----
 
 Built with 🌸 by a student, for students.
