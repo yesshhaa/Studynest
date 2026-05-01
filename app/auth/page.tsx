@@ -22,6 +22,9 @@ export default function AuthPage() {
     'auth/email-already-in-use':'Email already in use — try signing in.',
     'auth/weak-password':       'Password must be at least 6 characters.',
     'auth/invalid-email':       'Invalid email address.',
+    'auth/unauthorized-domain': 'This domain is not authorized in Firebase settings.',
+    'auth/invalid-api-key':     'Firebase API Key missing. You must redeploy your app on Vercel!',
+    'auth/popup-closed-by-user':'You closed the popup before finishing.',
   }
 
   const handle = async (fn: () => Promise<void>) => {

@@ -37,16 +37,18 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
   const signUp = async (name: string, email: string, pass: string) => {
     const cred = await createUserWithEmailAndPassword(auth, email, pass)
-    await updateProfile(cred.user, { displayName: name })
-    await saveUserProfile(cred.user.uid, { name, email })
+    try { await updateProfile(cred.user, { displayName: name }) } catch(e) { console.error(e) }
+    try { await saveUserProfile(cred.user.uid, { name, email }) } catch(e) { console.error('Firestore save fail:', e) }
   }
 
   const signInGoogle = async () => {
     const cred = await signInWithPopup(auth, googleProvider)
-    await saveUserProfile(cred.user.uid, {
-      name:  cred.user.displayName || '',
-      email: cred.user.email || '',
-    })
+    try {
+      await saveUserProfile(cred.user.uid, {
+        name:  cred.user.displayName || '',
+        email: cred.user.email || '',
+      })
+    } catch(e) { console.error('Firestore save fail:', e) }
   }
 
   const signOut = () => fbSignOut(auth)
