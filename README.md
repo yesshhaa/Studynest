@@ -34,52 +34,6 @@
 | Hosting   | Vercel (recommended)    |
 | Fonts     | DM Sans, DM Serif Display, Crimson Pro |
 
-## 📦 Getting Started
-
-### 1. Clone & install
-
-```bash
-git clone https://github.com/YOUR_USERNAME/studynest.git
-cd studynest
-npm install
-```
-
-### 2. Set up Firebase
-
-1. Go to [console.firebase.google.com](https://console.firebase.google.com)
-2. Create a new project (e.g. `studynest`)
-3. Enable **Authentication** → Sign-in methods → Email/Password + Google
-4. Enable **Firestore Database** → Start in production mode
-5. Go to **Project Settings** → Web App → Register app → Copy config
-
-### 3. Configure environment
-
-```bash
-cp .env.example .env.local
-```
-
-Fill in your Firebase values in `.env.local`.
-
-### 4. Run locally
-
-```bash
-npm run dev
-```
-
-Open [http://localhost:3000](http://localhost:3000)
-
-## 🌐 Deploy to Vercel
-
-```bash
-npm install -g vercel
-vercel
-```
-
-Add your environment variables in the Vercel dashboard under **Settings → Environment Variables**.
-
-Or deploy with one click:
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new)
 
 ## 📁 Project Structure
 
@@ -110,20 +64,7 @@ studynest/
 └── README.md
 ```
 
-## 🔒 Firestore Security Rules
 
-Add these rules in Firebase Console → Firestore → Rules:
-
-```javascript
-rules_version = '2';
-service cloud.firestore {
-  match /databases/{database}/documents {
-    match /users/{userId}/{document=**} {
-      allow read, write: if request.auth != null && request.auth.uid == userId;
-    }
-  }
-}
-```
 
 ## 🎨 Design
 
