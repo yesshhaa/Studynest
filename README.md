@@ -1,6 +1,6 @@
 # 🌸 StudyNest — Personal Study Dashboard
 
-[![Live Demo](https://img.shields.io/badge/Live_Demo-Vercel-black?style=for-the-badge&logo=vercel)](https://your-app-url.vercel.app)
+[![Live Demo](https://img.shields.io/badge/Live_Demo-Vercel-black?style=for-the-badge&logo=vercel)](https://studynest-amber.vercel.app/auth)
 
 > A beautiful personal productivity dashboard built with **Next.js 14**, **Firebase**, and **Tailwind CSS**.
 > Built by a cybersecurity student, for students.
