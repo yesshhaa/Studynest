@@ -1,0 +1,106 @@
+/* app/globals.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-sans:  'DM Sans', system-ui, sans-serif;
+    --font-serif: 'DM Serif Display', Georgia, serif;
+    --font-prose: 'Crimson Pro', Georgia, serif;
+  }
+
+  body {
+    background: #fdfaf6;
+    color: #2e2626;
+  }
+
+  ::-webkit-scrollbar       { width: 4px; height: 4px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: #f2c8c8; border-radius: 2px; }
+}
+
+@layer components {
+  .card {
+    @apply bg-white/85 backdrop-blur-sm border border-rose-100 rounded-2xl shadow-soft;
+  }
+
+  .card-header {
+    @apply px-5 py-4 border-b border-rose-100 flex items-center justify-between;
+  }
+
+  .card-title {
+    @apply text-xs font-semibold text-ink-muted uppercase tracking-widest;
+  }
+
+  .card-body {
+    @apply p-5;
+  }
+
+  .btn-primary {
+    @apply px-4 py-2 rounded-full bg-rose-200 text-rose-600 font-semibold text-sm
+           hover:bg-rose-500 hover:text-white transition-all duration-200 border-none cursor-pointer;
+  }
+
+  .btn-ghost {
+    @apply px-4 py-2 rounded-full border border-rose-100 bg-transparent text-ink-light
+           font-medium text-sm hover:bg-rose-50 transition-all duration-200 cursor-pointer;
+  }
+
+  .input-base {
+    @apply w-full px-3 py-2 rounded-xl border border-rose-100 bg-cream-50
+           text-ink font-sans text-sm outline-none
+           focus:border-rose-400 transition-colors duration-200 placeholder:text-ink-muted;
+  }
+
+  .tag {
+    @apply text-[10px] font-semibold px-2 py-0.5 rounded-full;
+  }
+
+  .tag-study    { @apply bg-lavender-50 text-lavender-500; }
+  .tag-project  { @apply bg-mint-50 text-mint-400; }
+  .tag-urgent   { @apply bg-rose-50 text-rose-600; }
+  .tag-deadline { @apply bg-peach text-peach-deep; }
+
+  .badge-new    { @apply bg-mint-50 text-mint-400; }
+  .badge-review { @apply bg-lavender-50 text-lavender-500; }
+  .badge-due    { @apply bg-rose-50 text-rose-600; }
+
+  .nav-btn {
+    @apply px-4 py-1.5 rounded-full text-sm font-medium text-ink-light
+           hover:bg-rose-50 hover:text-ink transition-all border-none bg-transparent cursor-pointer;
+  }
+
+  .nav-btn-active {
+    @apply bg-rose-100 text-rose-600;
+  }
+
+  .modal-overlay {
+    @apply fixed inset-0 z-50 flex items-center justify-content-center
+           bg-ink/20 backdrop-blur-sm;
+  }
+
+  .modal {
+    @apply bg-white rounded-3xl shadow-soft-lg p-7 w-full max-w-md mx-4
+           animate-slide-up;
+  }
+}
+
+@layer utilities {
+  .font-serif  { font-family: var(--font-serif); }
+  .font-prose  { font-family: var(--font-prose); }
+  .text-balance { text-wrap: balance; }
+}
+
+/* Background blobs */
+.bg-blobs::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background:
+    radial-gradient(ellipse 600px 400px at 5% 15%,  rgba(249,222,222,0.45) 0%, transparent 70%),
+    radial-gradient(ellipse 500px 500px at 95% 85%,  rgba(232,224,255,0.4)  0%, transparent 70%),
+    radial-gradient(ellipse 400px 300px at 50% 50%,  rgba(212,240,226,0.25) 0%, transparent 70%);
+}
